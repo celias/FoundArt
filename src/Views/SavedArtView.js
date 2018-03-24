@@ -3,6 +3,7 @@ import axios from 'axios';
 // THIS IS JUST A VIEW 
 // IMPORT RELAVENT COMPONENT WHEN DONE
 import ArtCard from './../components/ArtCard';
+import ArtGridList from './../components/ArtGridList';
 
 
 class SavedArtView extends Component{
@@ -12,29 +13,31 @@ class SavedArtView extends Component{
             savedArt: []
         }
         //BIND
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
     }
     componentDidMount(){
         axios.get('/api/getSavedArt').then(response => {
             console.log("THIS IS THE SAVED", response)
             this.setState({
-                // savedArt: response
+                savedArt: response.data.savedArt
             })
         })
     }
 
-    handleClick(id){
-        axios.post(`/api/saveArt/${id}`, {save: this.state.saveArt} ).then(response => console.log(response))
-    }
+    // handleClick(id){
+    //     axios.post(`/api/saveArt/${id}`, {save: this.state.saveArt} ).then(response => console.log(response, "ASDF"))
+    // }
 
     render(){
+        console.log(this.state.savedArt, "FUCK")
         let saved = this.state.savedArt;
-        let savedArtList = saved.map((artSaved, i) => {
-            return <ArtCard key={i} index={i} image={artSaved._links.thumbnail.href} wholeArt={artSaved} />
+        let savedArtList = saved.map((artS, i) => {
+            return <ArtCard key={i} wholeArt={artS} image={artS._links.thumbnail.href} artistName={artS.name} bio={artS.biography}/>
         })
 
         return(
             <div>
+                
             {/* <div>
                 <button onClick={this.handleClick}>SAVE ART</button>
                 </div> */}

@@ -12,7 +12,7 @@ function ArtCard(props){
         height:'1000px',
         width:'200px'
     }
-console.log(saveClick)
+console.log(saveClick, "WHAT AM I SAVING?")
     return(
         <div style={divStyle}>
             <img src={props.image} alt="imgSoon" />
