@@ -8,24 +8,30 @@ function ArtCard(props){
     console.log(props.wholeArt, "WHOLE ARTTTT")
     }
 
+  
+
     const divStyle = {
         height:'500px',
         width:'200px'
     }
-console.log(saveClick, "WHAT AM I SAVING?")
+console.log(props, "PROPS")
     return(
        
         <div style={divStyle}>
             <img src={props.image} alt="imgSoon" />
             <h1>{props.artistName}</h1>
             {/* <p>{props.bio}</p> */}
-            <button onClick={saveClick}>SAVE MEEEEE</button>
-            <button onClick={() => props.deleteClick(props.index)}>DELETE</button>
-        </div>
+
         
-            
-       
-    )
+        {props.parent === 'artList' ? (
+            <div>
+            <button onClick={saveClick}>SAVE MEEEEE</button>
+            </div>
+         ) : (
+            <button onClick={() => props.deleteClick(props.index)}>DELETE</button>
+         )}
+        </div>
+        )
 }
 
 export default ArtCard;

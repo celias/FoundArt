@@ -53,10 +53,10 @@ class ArtGridList extends Component {
         //     )})
 
         let newArtImage = this.state.artworks.map((art, i) => {
-            console.log(art, "NEW ART IMAGE!!!!")
+            console.log(this, "THIS LIST")
             return(
                 <div key={i}>
-                   <ArtCard  wholeArt={art} image={art._links.thumbnail.href} artistName={art.name} bio={art.biography}/>
+                   <ArtCard parent='artList' wholeArt={art} image={art._links.thumbnail.href} artistName={art.name} bio={art.biography}/>
 
                 </div>
             )

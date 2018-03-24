@@ -31,10 +31,10 @@ class SavedArtView extends Component{
     }
 
     render(){
-        console.log(this.state.savedArt, "FUCK")
+        console.log(this, "THIS")
         let saved = this.state.savedArt;
         let savedArtList = saved.map((artS, i) => {
-            return <ArtCard  deleteClick={this.deleteClick} index={i} key={i} wholeArt={artS} image={artS._links.thumbnail.href} artistName={artS.name} bio={artS.biography}/>
+            return <ArtCard parent='savedArt' deleteClick={this.deleteClick} index={i} key={i} wholeArt={artS} image={artS._links.thumbnail.href} artistName={artS.name} bio={artS.biography}/>
         })
 
         return(
