@@ -9,7 +9,7 @@ function ArtCard(props){
     }
 
     const divStyle = {
-        height:'1000px',
+        height:'500px',
         width:'200px'
     }
 console.log(saveClick, "WHAT AM I SAVING?")
@@ -18,7 +18,7 @@ console.log(saveClick, "WHAT AM I SAVING?")
         <div style={divStyle}>
             <img src={props.image} alt="imgSoon" />
             <h1>{props.artistName}</h1>
-            <p>{props.bio}</p>
+            {/* <p>{props.bio}</p> */}
             <button onClick={saveClick}>SAVE MEEEEE</button>
             <button onClick={() => props.deleteClick(props.index)}>DELETE</button>
         </div>
