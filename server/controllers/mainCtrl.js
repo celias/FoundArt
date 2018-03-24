@@ -24,6 +24,7 @@ axios
             .catch(console.log);
     };
 
+    // might not use
     const postArt = (req, res, next) => {
         console.log(req.body, req.params);
         const { img, name } = req.body;
@@ -31,12 +32,23 @@ axios
         art.push({ img, name, id });
         return res.status(200).json(myArt);
     };
-
+    //GET
     const getSavedArt = (req, res, next) => {
+        let newSavedArt = {
+            savedArt
+        }
+        res.status(200).json(newSavedArt)
+    }
+
+    //POST
+    const saveArt = (req, res, next) => {
        savedArt.push(req.body);
        res.status(200).json(savedArt);
     }
+
+    
    
+
    
 
 
@@ -56,7 +68,8 @@ axios
     module.exports = {
         getArt: getArt,
         postArt: postArt,
-        getSavedArt: getSavedArt
+        getSavedArt: getSavedArt,
+        saveArt: saveArt
 
         // getMoreArt: getMoreArt
     }
