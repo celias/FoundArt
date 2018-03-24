@@ -46,6 +46,13 @@ axios
        res.status(200).json(savedArt);
     }
 
+    //DELETE
+    const deleteArt = (req, res, next) => {
+        savedArt.splice(req.params, 1)
+        console.log("this is the req params", req.params)
+        res.status(200).json(savedArt);
+    }
+
     
    
 
@@ -69,7 +76,8 @@ axios
         getArt: getArt,
         postArt: postArt,
         getSavedArt: getSavedArt,
-        saveArt: saveArt
+        saveArt: saveArt,
+        deleteArt: deleteArt
 
         // getMoreArt: getMoreArt
     }

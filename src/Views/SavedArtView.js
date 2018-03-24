@@ -13,10 +13,10 @@ class SavedArtView extends Component{
             savedArt: []
         }
         //BIND
-        // this.handleClick = this.handleClick.bind(this);
+        this.deleteClick = this.deleteClick.bind(this);
     }
     componentDidMount(){
-        axios.get('/api/getSavedArt').then(response => {
+        axios.get('/api/getsavedart').then(response => {
             console.log("THIS IS THE SAVED", response)
             this.setState({
                 savedArt: response.data.savedArt
@@ -24,15 +24,17 @@ class SavedArtView extends Component{
         })
     }
 
-    // handleClick(id){
-    //     axios.post(`/api/saveArt/${id}`, {save: this.state.saveArt} ).then(response => console.log(response, "ASDF"))
-    // }
+    deleteClick(id){
+        axios.delete(`/api/deleteart/${id}`).then(response => {
+        this.setState({ savedArt: response.data})
+    })
+    }
 
     render(){
         console.log(this.state.savedArt, "FUCK")
         let saved = this.state.savedArt;
         let savedArtList = saved.map((artS, i) => {
-            return <ArtCard key={i} wholeArt={artS} image={artS._links.thumbnail.href} artistName={artS.name} bio={artS.biography}/>
+            return <ArtCard  deleteClick={this.deleteClick} index={i} key={i} wholeArt={artS} image={artS._links.thumbnail.href} artistName={artS.name} bio={artS.biography}/>
         })
 
         return(

@@ -9,13 +9,14 @@ app.use(json());
 app.use(cors());
 
 // ALL CONTROLLERS FROM MAIN CTRL GO HERE
-const { getArt, postArt, getSavedArt, saveArt } = require('./controllers/mainCtrl');
+const { getArt, postArt, getSavedArt, saveArt, deleteArt } = require('./controllers/mainCtrl');
 
 app.get('/api/getart', getArt);
 // app.get('/api/getMoreArt', getMoreArt);
 app.post('/api/postart/:id', postArt) // not using
 app.get('/api/getsavedArt', getSavedArt);
-app.post('/api/saveart/:id', saveArt)
+app.post('/api/saveart', saveArt)
+app.delete('/api/deleteart/:id', deleteArt)
 
 // GET ARTIST BIO?
 // GET getSavedArt

@@ -4,7 +4,7 @@ import axios from 'axios';
 function ArtCard(props){
 
   function saveClick(id) {
-    axios.post(`/api/saveArt/${id}`, props.wholeArt)
+    axios.post('/api/saveart', props.wholeArt)
     console.log(props.wholeArt, "WHOLE ARTTTT")
     }
 
@@ -14,12 +14,17 @@ function ArtCard(props){
     }
 console.log(saveClick, "WHAT AM I SAVING?")
     return(
+       
         <div style={divStyle}>
             <img src={props.image} alt="imgSoon" />
             <h1>{props.artistName}</h1>
             <p>{props.bio}</p>
-            <button onClick={saveClick}>SAVE</button>
+            <button onClick={saveClick}>SAVE MEEEEE</button>
+            <button onClick={() => props.deleteClick(props.index)}>DELETE</button>
         </div>
+        
+            
+       
     )
 }
 

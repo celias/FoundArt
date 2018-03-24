@@ -56,7 +56,7 @@ class ArtGridList extends Component {
             console.log(art, "NEW ART IMAGE!!!!")
             return(
                 <div key={i}>
-                   <ArtCard saveClick={art} wholeArt={art} image={art._links.thumbnail.href} artistName={art.name} bio={art.biography}/>
+                   <ArtCard  wholeArt={art} image={art._links.thumbnail.href} artistName={art.name} bio={art.biography}/>
 
                 </div>
             )
