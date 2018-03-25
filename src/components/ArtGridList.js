@@ -51,7 +51,7 @@ class ArtGridList extends Component {
         //     return (
         //         <div key={i} />
         //     )})
-
+// Parent='artList' is what makes the conditional render logic PROPS PROPS PROPS
         let newArtImage = this.state.artworks.map((art, i) => {
             console.log(this, "THIS LIST")
             return(

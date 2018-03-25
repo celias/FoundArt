@@ -3,6 +3,7 @@ const { clientSecret, apiUrl, clientID } = require('./../config');
 
 let myArt = [];
 let savedArt = [];
+let saveListName = ''
 
 // SOMETHING STEVEN DID ASK ABOUT THIS LATERRRRR
 axios
@@ -35,7 +36,7 @@ axios
     //GET
     const getSavedArt = (req, res, next) => {
         let newSavedArt = {
-            savedArt
+            savedArt, saveListName
         }
         res.status(200).json(newSavedArt)
     }
@@ -51,6 +52,15 @@ axios
         savedArt.splice(req.params, 1)
         console.log("this is the req params", req.params)
         res.status(200).json(savedArt);
+    }
+
+    //PUT
+    const updateName = (req, res, next) => {
+        savedListName = req.body.name;
+    }
+
+    const changeName = (req, res, next) => {
+        saveListName = req.body.name;
     }
 
     
@@ -77,7 +87,10 @@ axios
         postArt: postArt,
         getSavedArt: getSavedArt,
         saveArt: saveArt,
-        deleteArt: deleteArt
+        deleteArt: deleteArt,
+        updateName: updateName,
+        changeName: changeName
+
 
         // getMoreArt: getMoreArt
     }
