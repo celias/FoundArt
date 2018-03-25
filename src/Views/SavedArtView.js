@@ -11,11 +11,16 @@ class SavedArtView extends Component{
         super();
         this.state = {
             savedArt: [],
-            saveName: ''
+            saveName: '',
+            value: ''
+           
         }
+        
         //BIND
         this.deleteClick = this.deleteClick.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
     }
     componentDidMount(){
         axios.get('/api/getsavedart').then(response => {
@@ -33,20 +38,19 @@ class SavedArtView extends Component{
         })
     }
 
-    handleInput(e){
+    handleInputChange(e){
         console.log(e.target.value)
         this.setState({saveName: e.target.value})
-
+        // e.preventDefault();
+        
     }
-
-    handleClick(){
+    
+    handleSubmit(e){
         console.log(this.state, "DAMMIT")
         axios.put('/api/changename', {name: this.state.saveName}).then(response => console.log(response))
 
     }
-    
-    
-    
+
     render(){
         console.log(this, "THIS")
         let saved = this.state.savedArt;
@@ -66,8 +70,8 @@ class SavedArtView extends Component{
             <div>
             <div style={divStyle}>
        <div>
-           <input type='text' value={this.state.saveName} onChange={(e) => this.handleInput(e)}></input>
-           <button onClick={this.handleClick}>Submit</button>
+           <input type='text' value={this.state.saveName} onChange={(e) => this.handleInputChange(e)}></input>
+           <button onClick={this.handleSubmit}>Submit</button>
            <br/>
           <h1>{this.state.saveName}</h1>
            </div>
