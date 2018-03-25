@@ -12,7 +12,8 @@ class SavedArtView extends Component{
         this.state = {
             savedArt: [],
             saveName: '',
-            value: ''
+            currName: ''
+            
            
         }
         
@@ -40,14 +41,14 @@ class SavedArtView extends Component{
 
     handleInputChange(e){
         console.log(e.target.value)
-        this.setState({saveName: e.target.value})
+        this.setState({currName: e.target.value})
         // e.preventDefault();
         
     }
     
     handleSubmit(e){
         console.log(this.state, "DAMMIT")
-        axios.put('/api/changename', {name: this.state.saveName}).then(response => console.log(response))
+        axios.put('/api/changename', {name: this.state.currName}).then(response => this.setState({saveName: response.data, currName: ""}))
 
     }
 
@@ -70,10 +71,18 @@ class SavedArtView extends Component{
             <div>
             <div style={divStyle}>
        <div>
-           <input type='text' value={this.state.saveName} onChange={(e) => this.handleInputChange(e)}></input>
+           <input type='text' value={this.state.currName} onChange={(e) => this.handleInputChange(e)}></input>
            <button onClick={this.handleSubmit}>Submit</button>
            <br/>
-          <h1>{this.state.saveName}</h1>
+
+           <div>
+          <h1>{this.state.saveName ? (
+              this.state.saveName
+          ) : (
+              this.state.currName
+          )}</h1>
+          </div>
+
            </div>
             <div>
                 {savedArtList}

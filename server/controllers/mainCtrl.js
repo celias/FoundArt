@@ -57,10 +57,12 @@ axios
     //PUT
     const updateName = (req, res, next) => {
         savedListName = req.body.name;
+        
     }
 
     const changeName = (req, res, next) => {
         saveListName = req.body.name;
+        res.status(200).json(saveListName)
     }
 
     
