@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import ArtCard from "./ArtCard"
-
+import ArtCard from "./ArtCard";
+import './ArtCard.css';
 class ArtGridList extends Component {
     constructor(){
         super();
@@ -55,16 +55,20 @@ class ArtGridList extends Component {
         let newArtImage = this.state.artworks.map((art, i) => {
             console.log(this, "THIS LIST")
             return(
+                
                 <div key={i}>
+                <div>
                    <ArtCard parent='artList' wholeArt={art} image={art._links.thumbnail.href} artistName={art.name} bio={art.biography}/>
-
+                </div>
                 </div>
             )
         })
         
             return (
-                <div style={{height:'100vh',width:'100vw'}}>
+                <div className="art-cards">
+                <div>
                 {newArtImage}
+                </div>
                 </div>
         )
       

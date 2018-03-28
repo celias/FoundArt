@@ -4,6 +4,7 @@ import axios from 'axios';
 // IMPORT RELAVENT COMPONENT WHEN DONE
 import ArtCard from './../components/ArtCard';
 import ArtGridList from './../components/ArtGridList';
+import './../components/ArtCard.css';
 
 
 class SavedArtView extends Component{
@@ -68,7 +69,7 @@ class SavedArtView extends Component{
                     }
 
         return(
-            <div>
+            <div className="BG">
             <div style={divStyle}>
        <div>
            <input type='text' value={this.state.currName} onChange={(e) => this.handleInputChange(e)}></input>
@@ -84,7 +85,7 @@ class SavedArtView extends Component{
           </div>
 
            </div>
-            <div>
+            <div className="BG">
                 {savedArtList}
                 </div>
                 </div>

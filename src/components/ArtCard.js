@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './ArtCard.css';
+
 function ArtCard(props){
 
   function saveClick(id) {
@@ -10,22 +12,26 @@ function ArtCard(props){
 
   
 
-    const divStyle = {
-        height:'500px',
-        width:'200px'
-    }
+
 console.log(props, "PROPS")
     return(
        
-        <div style={divStyle}>
+        <div className="art-card">
+        
+            <div className="img">
             <img src={props.image} alt="imgSoon" />
+            </div>
+            
+            <div className="name">
             <h1>{props.artistName}</h1>
             {/* <p>{props.bio}</p> */}
+            </div>
+            
 
         
         {props.parent === 'artList' ? (
             <div>
-            <button onClick={saveClick}>SAVE MEEEEE</button>
+            <button className="name-btn" onClick={saveClick}>Like</button>
             </div>
          ) : (
             <button onClick={() => props.deleteClick(props.index)}>DELETE</button>
