@@ -72,13 +72,14 @@ class SavedArtView extends Component{
         return(
             <div className="BG">
             <div style={divStyle}>
-       <div>
-           <input type='text' value={this.state.currName} onChange={(e) => this.handleInputChange(e)}></input>
-           <button onClick={this.handleSubmit}>Submit</button>
+       <div className="fields">
+       <h2 className="list">Name your list.</h2>
+           <input className="input" type='text' value={this.state.currName} onChange={(e) => this.handleInputChange(e)}></input>
+           <br /><button className="inputBtn" onClick={this.handleSubmit}>Submit</button>
            <br/>
 
            <div>
-          <h1>{this.state.saveName ? (
+          <h1 className="listName">{this.state.saveName ? (
               this.state.saveName
           ) : (
               this.state.currName

@@ -68,3 +68,39 @@
     box-shadow: 0 12px 16px 0 rgba(4,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.39);
   }
 
+  .fields{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    margin-top: 50%;
+    margin-left: 700px;
+  }
+
+  .list{
+    font-family: 'IBM Plex Serif', serif;
+    color: palevioletred;
+    width: 500px;
+    margin-left: 330px;
+  }
+
+  .input{
+    color: black;
+    width: 400px;
+  }
+
+  .inputBtn{
+    width: 300px;
+    font-family: monospace;
+  }
+
+  .listName{
+    width: 500px;
+    border: solid salmon 1px;
+    padding: 20px;
+    
+  }
+
+
