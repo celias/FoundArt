@@ -4,6 +4,7 @@ import axios from 'axios';
 // IMPORT RELAVENT COMPONENT WHEN DONE
 import ArtCard from './../components/ArtCard';
 import ArtGridList from './../components/ArtGridList';
+import './../Views/SplashView.css';
 import './../components/ArtCard.css';
 
 
@@ -59,7 +60,7 @@ class SavedArtView extends Component{
         let savedArtList = saved.map((artS, i) => {
                     
             
-            return <ArtCard parent='savedArt' deleteClick={this.deleteClick} index={i} key={i} wholeArt={artS} image={artS._links.thumbnail.href} artistName={artS.name} bio={artS.biography}/>
+            return <ArtCard className="art-card" parent='savedArt' deleteClick={this.deleteClick} index={i} key={i} wholeArt={artS} image={artS._links.thumbnail.href} artistName={artS.name} bio={artS.biography}/>
         })
                     const divStyle = {
                     height:'500px',
@@ -85,8 +86,10 @@ class SavedArtView extends Component{
           </div>
 
            </div>
-            <div className="BG">
+            <div className="art-cards">
+           
                 {savedArtList}
+               
                 </div>
                 </div>
                 </div>

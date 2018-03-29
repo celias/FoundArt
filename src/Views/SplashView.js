@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
-
+import './../Views/SplashView.css';
 // import Background from './'
+
 
 // THIS IS JUST A VIEW 
 // IMPORT RELAVENT COMPONENT WHEN DONE
 
 function SplashView(){
+    // const imgs = ['./../images/samuel-zeller-485703-unsplash.jpg', './../images/charlotte-butcher-345913-unsplash (1).jpg']
 
-    // const divStyle= {
-    //     backgroungImage: url('')
-    // }
+ 
     return(
-        <div className="main-splash-container">
-            <h1>YOUR ARE AT THE SPLASH LANDING PAGE</h1>
-            
+        <div>
+        <div className="bg-img">
+{/* <h3> Discover something new with FOUND </h3> */}
+<div className="nest">
+<div className="bg-white">
+</div>
+</div>
+        {/* <h1>Find art neart you</h1>
+        <input /> */}
+         </div>
         </div>
     )
 }

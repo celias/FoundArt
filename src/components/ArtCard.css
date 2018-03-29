@@ -2,7 +2,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
-    margin-left: 27%;
+    margin-left: 23%;
+    /* background-color: rgba(205, 134, 63, 0.664); */
+
   }
   .art-card {
     background: rgba(59, 59, 59, 0.555);

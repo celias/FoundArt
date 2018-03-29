@@ -1,0 +1,39 @@
+.title{
+    margin-left: 30%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';  
+    font-size: 3.8em;
+    margin: 0;
+    width: 200px;
+    padding: 55px;
+    margin-left: 27%;
+}
+
+.paragraph{
+    margin-left: 30%;
+    width: 590px;
+    height: 100px;
+    font-size: 1.5em;
+    line-height: 3.8ex;
+    font-family: monospace;
+    font-weight: 300;
+}
+
+.about {
+    /* background-color: rgba(205, 134, 63, 0.664); */
+    height: 1100px;
+}
+
+.titleDiv{
+    margin-top: 0;
+}
+
+.subs{
+    font-size: 1.3em;
+    line-height: 4ex;
+    width: 700px;
+}
+
+.boldIt{
+    text-decoration: underline;
+    line-height: 4ex;
+}

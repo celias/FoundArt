@@ -1,0 +1,18 @@
+.bg-img{
+    
+    background-image: url('./../images/alexandra-nicolae-456304-unsplash.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+}
+
+.bg-white{
+    display: flex;
+    align-content: center;
+    flex-basis: 500px 200px;
+   
+    background-color: white;
+}
