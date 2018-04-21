@@ -50,7 +50,8 @@ class SavedArtView extends Component{
     
     handleSubmit(e){
         console.log(this.state, "DAMMIT")
-        axios.put('/api/changename', {name: this.state.currName}).then(response => this.setState({saveName: response.data, currName: ""}))
+        axios.put('/api/changename', {name: this.state.currName})
+        .then(response => this.setState({saveName: response.data, currName: ""}))
 
     }
 
